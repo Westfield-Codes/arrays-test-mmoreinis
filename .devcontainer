@@ -1,6 +1,6 @@
 {
   "name": "HTML-JS with Live Preview",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/codespaces-linux",
   "extensions": [
     "ms-vscode.live-preview"
   ]
