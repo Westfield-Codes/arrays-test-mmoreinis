@@ -37,6 +37,7 @@ function makeList(items){
    return itemsArray;
 }
 
+
 /* 2. Function addPrices(shoppingList)
  * Create a 1D priceList array by SPLITTING a string called prices
  * Create a 2D array called pricesArray where you will store items and prices. 
@@ -53,13 +54,12 @@ function makeList(items){
 function addPrices(shoppingList,prices){
    let priceList = prices.split(",");
    let  pricesArray = [];
-   
    for( let item = 1; item<shoppingList.length; item++){
       itemPrice = [];
-      shoppingList.push(itemPrice);
-      priceList.push(itemPrice);
-      itemPrice.push(pricesArray);
-     console.log[pricesArray];
+      shoppingList.push(itemPrice); // wrong direction - you do not understand .push() yet. 
+      priceList.push(itemPrice); // wrong direction - and also you do not use the item index so would push the entire loop.
+      itemPrice.push(pricesArray); // wrong direction
+     console.log[pricesArray]; // no toString()
    return pricesArray;
    }
 }
@@ -85,8 +85,9 @@ function calculateTotal(pricesArray){
       // Use a FOR LOOP to add each new message line with the item name, $, the price and a line break.
     itemPrice= ["item" + item + ", $" + price + "\n"];
   }
-   price += parseFloat(total);
-   total.toFixed(2);
+   price += parseFloat(total); // all mixed up.
+   total.toFixed(2); // all mixed up
    message += "Total=" + total;
 return message;
 }
+
