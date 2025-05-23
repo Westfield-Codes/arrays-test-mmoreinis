@@ -8,6 +8,7 @@
  * CLOSE attention to the arguments and parameters in main()!!!!!!
  */
 
+
 /* MAIN
  * 1. Create an array from a string list
  * 2. Create a 2D array from a 1D array to include number of items and price.
@@ -30,36 +31,36 @@ function main() {
  * @param: list of items, separated by commas
  * @return: itemsArray
  */
-function makeList(items){
-   let itemsArray = items.split(",");
+function makeList(items) {
+let itemsArray = items.split(",");
    console.log(itemsArray.toString());
    return itemsArray;
 }
 
 
-/* 2. Function addPrices(shoppingList,prices)
+/* 2. Function addPrices(shoppingList)
  * Create a 1D priceList array by SPLITTING a string called prices
  * Create a 2D array called pricesArray where you will store items and prices. 
  * Use a FOR LOOP based on the length of shoppingList[] 
  * Inside the loop, create an itemPrice subarray (create it inside the loop because you want it empty)
  * Push the shoppingList item into that itemPrice subarray
- * Push the pricesList item with the same index into that itemPrice subArray
+ * Push the priceList item with the same index into that itemPrice subArray
  * Push the itemPrice subarray into the pricesArray 
  * You might want to console.log the pricesArray after the loop before you return it.
  * Total lines in my code: 12
  * @param: shoppingList, prices
  * @return: pricesArray
  */
-function addPrices(shoppingList, prices){
+function addPrices(shoppingList,prices){
    let priceList = prices.split(",");
    let pricesArray = [];
-   for (let item = 0; item < shoppingList.length; item++){
-      let itemPrice = [];
-      itemPrice.push(shoppingList[item]);
-      itemPrice.push(priceList[item]);
-      pricesArray.push(itemPrice);
+   for (let i = 0; i < shoppingList.length; i++) {
+     let itemPrices = [];
+     itemPrices.push(shoppingList[i]);
+     itemPrices.push(priceList[i]);
+     pricesArray.push(itemPrices);
    }
-   console.log(pricesArray.toString());
+   console.log(pricesArray);
    return pricesArray;
 }
 
@@ -77,15 +78,14 @@ function addPrices(shoppingList, prices){
  * @param = pricesArray
  * @return = message
  */ 
-function calculateTotal(pricesArray){
-   let total = 0;
-   let message = "Items to buy: \n";
-   for (let i = 0; i < pricesArray.length; i++){
-      //add each new message line with the item name, $, the price and a line break.
-      message += pricesArray[i][0] + " $" + pricesArray[i][1] + "\n";
-      total += parseFloat(pricesArray[i][1]);
+ function calculateTotal(pricesArray) {
+   let total = 0
+   let message = ["Items to buy: \n"];
+   for (let i = 0; i < pricesArray.length; i++ ){
+      let item = pricesArray[i][0];
+       let price = pricesArray[i][1];
+       message.push(item + " : $ " + price);
    }
-   let rounded = total.toFixed(2);
-   message += "Total = " + rounded;
-   return message;
-}
+      message.push("Total = $" + total.toFixed(2));
+      return message.join("\n");
+   }
