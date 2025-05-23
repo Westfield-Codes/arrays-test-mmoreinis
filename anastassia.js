@@ -36,6 +36,7 @@ function makeList(items) {
    return itemsArray;
 }
 
+
 /* 2. Function addPrices(shoppingList)
  * Create a 1D priceList array by SPLITTING a string called prices
  * Create a 2D array called pricesArray where you will store items and prices. 
@@ -62,6 +63,7 @@ function addPrices(shoppingList,prices) {
    return pricesArray;
 }
 
+
 /* 3. Function calculateTotal(pricesArray)
  * Create a variable called total, set to 0.
  * Create a variable called message, with first line as "Items to buy:" plus a LINE BREAK
@@ -81,7 +83,7 @@ function calculateTotal(pricesArray) {
    for (let item =0;item<5;item++) {
       //new message line with the item name, $, the price and a line break.
       message+=pricesArray[item][0]+"$"+pricesArray[item][1]+"\n";
-      total += parseFloat;
+      total += parseFloat; // parseFloat what?
    }
    // total = total.toFixed(2);
    alert("Total = " + total);
