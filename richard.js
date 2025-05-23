@@ -50,7 +50,9 @@ function makeList(items){
  * @return: pricesArray
  */
 function addPrices(shoppingList,prices){
-  let priceList = [prices.split(",")]
+  let priceList = [prices.split(",")] 
+  // .split() returns an array. You'd end up with [["6.49","4.49","4.89","0.44","1.80"]] instead of ["6.49","4.49","4.89","0.44","1.80"].
+  // and therefore none of your references would work.  Easy error to miss!
   let pricesArray = []
   for (let i = 0; i < shoppingList.length; i++){
    let itemPrice = [];
@@ -61,6 +63,8 @@ function addPrices(shoppingList,prices){
   console.log(pricesArray.toString())
   return pricesArray
 }
+
+
 
 
 /* 3. Function calculateTotal(pricesArray)
@@ -83,3 +87,5 @@ function calculateTotal(pricesArray){
      
    }
 }
+
+// good so far. 
